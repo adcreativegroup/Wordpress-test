@@ -7,7 +7,7 @@ jobs:
   test-php:
     # Install php packages and run tests
     docker:
-      - image: cimg/php:5.2-node
+      - image: wordpress
     steps:
       - checkout:
           path: ~/project
@@ -18,12 +18,12 @@ jobs:
   deploy:
     # This is an example deploy job, not actually used by the workflow
     docker:
-      - image: cimg/base:stable
+      - image: wordpress
     steps:
       # Replace this with steps to deploy to users
       - run:
           name: deploy
-          command: '#e.g. ./deploy.sh'
+          command: "#e.g. ./deploy.sh"
 workflows:
   build-and-test:
     jobs:
